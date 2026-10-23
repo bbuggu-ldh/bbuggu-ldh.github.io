@@ -1,5 +1,5 @@
 # TAUE Portfolio
 
-Static portfolio website. Publish this repository root with GitHub Pages.
+Public portfolio at https://bbuggu-ldh.github.io/.
 
-Generated from the local TAUE website project. Update by replacing the exported site files.
+Deployment contains the homepage, six published projects, and their required assets. Local drafts and design studies are excluded by the source project public-export step.
