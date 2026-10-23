@@ -30,7 +30,7 @@ if (lightbox && typeof lightbox.showModal === 'function') {
   size.addEventListener('click', () => {
     const original = lightbox.classList.toggle('is-original');
     size.setAttribute('aria-pressed', String(original));
-    size.textContent = original ? '화면에 맞추기' : '원본 크기';
+    size.textContent = original ? '화면에 맞추기' : (trigger?.dataset.zoomSizeLabel || '원본 크기');
   });
   let trigger;
   document.querySelectorAll('[data-zoom]').forEach(link => link.addEventListener('click', event => {
@@ -40,7 +40,7 @@ if (lightbox && typeof lightbox.showModal === 'function') {
     trigger = link;
     lightbox.classList.remove('is-original');
     size.setAttribute('aria-pressed', 'false');
-    size.textContent = '원본 크기';
+    size.textContent = link.dataset.zoomSizeLabel || '원본 크기';
     const alt = link.querySelector('img').alt;
     fullImage.src = link.href;
     fullImage.alt = alt;
