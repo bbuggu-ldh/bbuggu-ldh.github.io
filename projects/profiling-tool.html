@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>프로파일링을 반복하는 도구 — LEEDOHAN</title><meta name="description" content="측정할 때마다 손으로 모으던 stat과 씬 정보를 한 번에 추출하고 사람이 조건을 대조해 읽는 도구를 만들었다."><meta property="og:title" content="프로파일링을 반복하는 도구 — LEEDOHAN"><meta property="og:type" content="article"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../designs/footprints-archive.css"><link rel="stylesheet" href="../designs/footprints-surface.css?v=reading-width-20261102b"><link rel="stylesheet" href="../designs/project-surface.css?v=full-video-20261102c"><script src="../app.js" defer></script></head>
+<body class="surface-detail project-detail compact-feature" data-project="profiling-tool" style="--project-backdrop:url('../media/daejeon-palace-sunset-1600.webp')">
+<a class="skip-link" href="#record">본문으로 건너뛰기</a><div class="reading-progress" aria-hidden="true"></div>
+<header class="case-header" id="top"><a class="case-brand" href="../designs/graphics-archive-remy.html?project=daejeon"><strong>LEEDOHAN</strong><span>Technical Artist</span></a><a class="back-link" href="../designs/graphics-archive-remy.html?project=daejeon">← 프로젝트 목록</a></header>
+<main class="article-panel" id="main"><section class="surface-opening" aria-labelledby="surface-title">
+<img class="surface-landscape" src="../media/daejeon-palace-sunset-1600.webp" alt="프로파일링을 반복하는 도구 작업 배경" aria-hidden="true" fetchpriority="high">
+<div class="surface-feature"><div class="surface-result"><figure class="article-figure"><a href="../media/profiler-ui.png" class="zoom-link" data-zoom aria-label="Unreal Engine 프로파일링 데이터 캡처 도구의 실제 UI 크게 보기"><img class="" src="../media/profiler-ui-1600.webp" srcset="../media/profiler-ui-800.webp 800w, ../media/profiler-ui-1600.webp 1600w" sizes="800px" alt="Unreal Engine 프로파일링 데이터 캡처 도구의 실제 UI" width="1110" height="938" loading="eager" fetchpriority="high" decoding="async"></a></figure></div><header class="surface-copy"><h1 id="surface-title">Profiling<br>workflow</h1><p class="surface-name">프로파일링을 반복하는 도구</p><p class="surface-description">측정할 때마다 손으로 모으던 stat과 씬 정보를 한 번에 추출하고 사람이 조건을 대조해 읽는 도구를 만들었다.</p><a class="surface-read" href="#record">제작 과정 읽기 <span aria-hidden="true">↓</span></a></header></div>
+<div class="surface-bottom"><p>대전 에셋사업 / 제작 도구<br>2026</p><a href="#record">아래로 스크롤 <span aria-hidden="true">↓</span></a></div>
+</section><div class="surface-reading"><article class="article-body" id="record"><p>대전 에셋사업에서는 기존 ICVFX 구성과 달리 Pixera를 사용하는 송출 환경으로 작업했는데 기존 환경보다 프레임이 크게 떨어져 추가 최적화가 필요했다.</p>
+<p>작업 시간이 부족해 반복 측정에 드는 시간을 줄이려고 stat 값과 Insights trace, 씬 구조를 함께 추출하는 Editor Utility를 만들었다. 데이터를 모으는 단계와 결과를 해석하는 단계를 나눠 씬을 반복해서 살펴볼 수 있게 구성했다.</p>
+<h2 id="section-1" tabindex="-1">수집과 해석을 나누기<a class="heading-anchor" href="#section-1" aria-label="이 절 링크">#</a></h2>
+<p>현재 보고 있는 뷰에서 Insights trace와 <code>stat rhi</code>, <code>stat gpu</code>, <code>stat scenerendering</code>, 씬 구조 스냅샷을 추출해 분석 템플릿과 함께 리뷰 도구에 전달한다.</p>
+<figure class="article-figure"><a href="../media/profiler-ui.png" class="zoom-link" data-zoom aria-label="캡처 항목과 실행 버튼을 배치한 프로파일링 도구 UI 크게 보기"><img class="" src="../media/profiler-ui-1600.webp" srcset="../media/profiler-ui-800.webp 800w, ../media/profiler-ui-1600.webp 1600w" sizes="800px" alt="캡처 항목과 실행 버튼을 배치한 프로파일링 도구 UI" width="1110" height="938" loading="lazy"  decoding="async"></a><figcaption><span class="figure-number">FIG. 01</span> 캡처 항목과 실행 버튼을 배치한 프로파일링 도구 UI </figcaption></figure><div class="code-block"><div class="code-bar"><span>text</span><button type="button" data-copy hidden>복사</button></div><pre tabindex="0"><code>Editor Utility
+  ├─ Insights trace
+  ├─ stat rhi / gpu / scenerendering
+  └─ 씬 구조 스냅샷
+          ↓
+분석 템플릿 + 리뷰 도구
+          ↓
+씬 조건과 대조하여 조치 결정</code></pre></div>
+<p>데이터 추출까지는 자동화하고 리뷰는 팀원이 쓰던 도구에서 이어가도록 해 모든 단계를 하나의 도구에 고정하지 않았다.</p>
+<h2 id="section-2" tabindex="-1">숫자와 함께 수집한 맥락<a class="heading-anchor" href="#section-2" aria-label="이 절 링크">#</a></h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="기술 비교 표 — 가로로 스크롤"><table><thead><tr><th>데이터</th><th>확인할 수 있는 내용</th></tr></thead><tbody><tr><td>actors / mesh_stats</td><td>배치, 삼각형, LOD, Nanite, 머티리얼</td></tr><tr><td>material_stats</td><td>마스터, 블렌드 모드, WPO 사용 여부</td></tr><tr><td>textures</td><td>해상도, 포맷, 메모리</td></tr><tr><td>vsm_shadow_diagnostics</td><td>non-Nanite 그림자 캐스터와 mobility 분류</td></tr><tr><td>frame_timing / gpu_passes</td><td>프레임 타이밍과 GPU 패스</td></tr></tbody></table></div>
+<p>기본 stat에 없는 그림자 캐스터 분류도 함께 수집했다. 개수만으로는 어떤 오브젝트를 먼저 살펴봐야 할지 알기 어려웠기 때문이다.</p>
+<h2 id="section-3" tabindex="-1">경고를 그대로 따르지 않은 이유<a class="heading-anchor" href="#section-3" aria-label="이 절 링크">#</a></h2>
+<p>기존 케이스에서는 그림자 캐스터 개수가 많다는 경고를 씬 조건과 대조했다. 다수가 Nanite 정적 오브젝트였기 때문에 전체 개수보다 움직이는 non-Nanite 캐스터를 구분하는 일이 중요했다.</p>
+<p>도구의 경고는 확인할 곳을 가리키는 단서라 실제 비용은 Nanite 여부와 mobility, 라이트, 플랫폼 조건을 함께 보고 판단해야 한다.</p>
+<h2 id="section-4" tabindex="-1">팀에서 사용한 방식<a class="heading-anchor" href="#section-4" aria-label="이 절 링크">#</a></h2>
+<p>제출한 경력기술서에서는 한 씬 판독에 하루~이틀이 걸리던 수작업을 버튼 한 번의 데이터 추출과 사람의 리뷰로 나눴다고 기록했다. 운영 중에는 하루 8회의 측정·수정·재측정 사이클을 확보했고 파트 4명 중 2명은 도구를 직접 사용했으며 나머지 2명은 정리된 리포트를 받아 작업했다.</p>
+<p>버튼 한 번으로 분석이 끝나는 것은 아니어서 LLM 분석 템플릿으로 만든 보고서도 사람이 씬 조건과 대조해 판독했다.</p>
+<p>그림자 캐스터 7,567개에 대한 경고 중 96%는 Nanite였고 대부분 정적이었다. 그래서 기록에서는 실제 갱신 비용을 확인할 대상을 움직이는 non-Nanite 187개로 좁혀 캐스터 수만으로 전체 그림자 비용을 판단하지 않았다.</p>
+<h2 id="section-5" tabindex="-1">현재 범위와 후속 작업<a class="heading-anchor" href="#section-5" aria-label="이 절 링크">#</a></h2>
+<p>현재 기록은 단일 PC 기준이며 여러 렌더 노드의 캡처를 통합하고 씬 조건에 따라 경고 임계값을 조절하는 작업이 남아 있다.</p>
+<p>분석 템플릿도 프로젝트에 맞춰 수동으로 조정한다. 따라서 이 도구는 수집과 해석을 돕는 흐름이며 모든 병목을 자동으로 판정하지 않는다.</p>
+<div class="source-note"><a href="../sources.html">기록과 이미지 출처</a></div></article>
+<nav class="record-end" aria-label="프로젝트 탐색"><a href="../designs/graphics-archive-remy.html?project=daejeon">← 프로젝트 목록</a><a href="daejeon.html">대전 에셋사업</a><a href="#top">맨 위로 ↑</a></nav></div></main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>

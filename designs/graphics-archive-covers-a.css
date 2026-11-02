@@ -1,0 +1,7 @@
+/* Keep the archive interface sans while restoring the original serif cover typography. */
+body.personal-archive,
+body.personal-archive *{font-family:"Archive Sans",sans-serif!important}
+.personal-archive .case .cover-title,
+.personal-archive .case .cover-title span,
+.personal-archive .case .case-spine>span{font-family:"Archive Serif",Georgia,serif!important}
+.personal-archive .case[data-slug="show-business"] .cover-title{font-size:22cqw}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>VP 파이프라인 자동화 — LEEDOHAN</title><meta name="description" content="클러스터 설정과 여러 시스템의 녹화를 연결하고 3DGS 데이터 선별 과정을 자동화했다."><meta property="og:title" content="VP 파이프라인 자동화 — LEEDOHAN"><meta property="og:type" content="article"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../designs/footprints-archive.css"><link rel="stylesheet" href="../designs/footprints-surface.css?v=reading-width-20261102b"><link rel="stylesheet" href="../designs/project-surface.css?v=full-video-20261102c"><script src="../app.js" defer></script></head>
+<body class="surface-detail project-detail compact-feature" data-project="pipeline-automation" style="--project-backdrop:url('../media/pipeline-config-1600.webp')">
+<a class="skip-link" href="#record">본문으로 건너뛰기</a><div class="reading-progress" aria-hidden="true"></div>
+<header class="case-header" id="top"><a class="case-brand" href="../designs/graphics-archive-remy.html"><strong>LEEDOHAN</strong><span>Technical Artist</span></a><a class="back-link" href="../designs/graphics-archive-remy.html">← 프로젝트 목록</a></header>
+<main class="article-panel" id="main"><section class="surface-opening" aria-labelledby="surface-title">
+<img class="surface-landscape" src="../media/pipeline-config-1600.webp" alt="VP 파이프라인 자동화 작업 배경" aria-hidden="true" fetchpriority="high">
+<div class="surface-feature"><div class="surface-result"><figure class="article-figure"><a href="../media/pipeline-config.png" class="zoom-link" data-zoom aria-label="포트폴리오의 클러스터 Config 자동 생성 설계와 운영 결과 크게 보기"><img class="" src="../media/pipeline-config-1600.webp" srcset="../media/pipeline-config-800.webp 800w, ../media/pipeline-config-1600.webp 1600w" sizes="800px" alt="포트폴리오의 클러스터 Config 자동 생성 설계와 운영 결과" width="1600" height="901" loading="eager" fetchpriority="high" decoding="async"></a></figure></div><header class="surface-copy"><h1 id="surface-title">Production<br>pipeline</h1><p class="surface-name">VP 파이프라인 자동화</p><p class="surface-description">클러스터 설정과 여러 시스템의 녹화를 연결하고 3DGS 데이터 선별 과정을 자동화했다.</p><a class="surface-read" href="#record">제작 과정 읽기 <span aria-hidden="true">↓</span></a></header></div>
+<div class="surface-bottom"><p>제작 도구 / Python<br>2023 — 2025</p><a href="#record">아래로 스크롤 <span aria-hidden="true">↓</span></a></div>
+</section><div class="surface-reading"><article class="article-body" id="record"><p>반복 입력과 시스템 간 녹화 정렬에 드는 시간을 줄이려고 Python 기반 설정 생성과 다중 테이크 녹화 흐름을 구성했다. 여기에 대용량 3DGS 데이터 전처리까지 더해 서로 다른 프로젝트의 자동화 사례를 정리했다.</p>
+<h2 id="section-1" tabindex="-1">클러스터 설정 생성<a class="heading-anchor" href="#section-1" aria-label="이 절 링크">#</a></h2>
+<p>nDisplay 클러스터의 IP와 해상도, fullscreen, failover 값을 수동으로 입력했는데 오타가 LED 송출 단계에서 드러나면 네트워크와 미디어 서버까지 다시 확인해야 했다.</p>
+<p>Python에서 설정을 검증해 JSON을 생성하고 Unreal 자산으로 가져오도록 구성했다. 포트폴리오의 운영 기록에서 셋업 시간은 20<del>30분에서 2</del>3분으로 줄었으며 해당 작업에서 기록한 값이지 모든 구성에 적용되는 시간은 아니다.</p>
+<p>이 nDisplay 자동화는 별도 프로젝트 사례다. 씬 최적화 케이스의 Pixera 송출 프로젝트와 구분한다.</p>
+<h2 id="section-2" tabindex="-1">다중 테이크 녹화<a class="heading-anchor" href="#section-2" aria-label="이 절 링크">#</a></h2>
+<p>Switchboard와 엔진, 모션, 페이셜 시스템을 각각 녹화한 뒤 후처리에서 맞추던 흐름을 정리해 마스터 PC에서 OSC 동시 트리거를 보내고 모션캡처 마스터 타임코드와 하드웨어 gen-lock을 함께 사용했다.</p>
+<p>4개 시스템의 녹화를 연결해 테이크 직후 현장에서 결과를 확인하도록 했고 「호프」 본 촬영에 적용했다. 동기화 정확도는 정량 측정하지 않고 육안상 어긋남이 없는 수준까지만 확인해 프레임 단위 정확도를 검증하지는 않았다.</p>
+<h2 id="section-3" tabindex="-1">3DGS 전처리 자동화<a class="heading-anchor" href="#section-3" aria-label="이 절 링크">#</a></h2>
+<p>Python과 OpenCV로 대용량 촬영 데이터의 전처리를 자동화했다. 360 카메라와 DSLR, 드론 등으로 수집한 10,000장 이상의 이미지에서 GPS 메타데이터를 기준으로 아이레벨 학습 구간을 선별하고 360 이미지 분할과 분산 트레이닝 흐름까지 구성했다.</p>
+<p>기록상 트레이닝 기간은 7일에서 3일로 줄었다. 3DGS 알고리즘 자체가 아니라 전처리와 데이터 선별을 다룬 작업이며 당시 Unreal 플러그인과 LED 송출 통합이 불안정해 본 촬영에는 적용하지 못했다.</p>
+<div class="source-note"><a href="../sources.html">기록과 이미지 출처</a></div></article>
+<nav class="record-end" aria-label="프로젝트 탐색"><a href="../designs/graphics-archive-remy.html">← 프로젝트 목록</a><a href="#top">맨 위로 ↑</a></nav></div></main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>

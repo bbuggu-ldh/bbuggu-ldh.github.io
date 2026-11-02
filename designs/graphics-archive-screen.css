@@ -1,0 +1,32 @@
+/* Fit the original book archive to the monitor's 1440×810 viewport. */
+body.personal-archive{padding:0;--case-width:320px;--case-height:calc(var(--case-width)*1.38)}
+.personal-archive .monitor{height:100svh;min-height:0;border-radius:0;border:0;background:radial-gradient(ellipse at 50% 42%,#202223,#101112 76%);box-shadow:none}
+.personal-archive .masthead{padding:24px 38px 6px;gap:20px}
+.personal-archive .brand strong{font-size:35px;letter-spacing:-1.5px}
+.personal-archive .brand span{font-size:8px;letter-spacing:3px}
+.personal-archive .masthead nav{font-size:12px;gap:24px}
+.personal-archive .masthead nav button[data-open=project-index]{padding:8px 12px}
+.personal-archive main{justify-content:center;min-height:0}
+.personal-archive .stage{height:478px}
+.personal-archive .case{top:28px}
+.personal-archive .cover-bottom{gap:8px;align-items:center}
+.personal-archive .cover-bottom>span:first-child{grid-column:1;grid-row:1}
+.personal-archive .cover-bottom>span:last-child{grid-column:2;grid-row:1;font-size:20px;justify-self:end}
+.personal-archive .cover-caption{grid-column:1/-1;grid-row:2;font-size:18px;line-height:1.4;letter-spacing:-.4px;color:#eee9df;text-shadow:0 1px 7px #000;word-break:keep-all}
+.personal-archive .cover-caption strong{font-weight:600}
+.personal-archive .browse{margin:18px auto 16px;gap:20px}
+.personal-archive .browse button{height:34px;font-size:12px;min-width:110px}
+.personal-archive .browse>span{font-size:11px}
+.personal-archive .selection{padding:0 35px;min-height:0}
+.personal-archive .position{margin:0 0 11px;font-size:11px}
+.personal-archive .selection .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.personal-archive .selection #discipline{font-size:12px;margin:0 0 7px}
+.personal-archive .summary{font-size:12px;min-height:0;max-width:760px;margin:0 auto 12px;line-height:1.6}
+.personal-archive .open-project{font-size:12px;padding:9px 25px;min-width:240px}
+.personal-archive .archive-footer{font-size:10px;padding:12px 55px 14px;margin:0;transform:translateY(-8px)}
+.personal-archive .archive-footer button{font-size:11px;padding:3px 0}
+.personal-archive .archive-clock{font:450 15px/1.5 "Archive Sans",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.15px;color:#b6b4ac}
+.personal-archive .archive-contact{display:flex;align-items:center;gap:10px;margin-left:auto;font:450 15px/1.5 "Archive Sans",sans-serif;letter-spacing:.1px;color:#b6b4ac;text-align:right}
+.personal-archive .archive-contact>span:first-child{color:#d4d0c6}
+.personal-archive .archive-contact a:hover{color:#dedcd6}
+.personal-archive .monitor::before,.personal-archive .monitor::after{display:none}

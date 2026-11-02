@@ -1,5 +1,8 @@
-# TAUE Portfolio
+# LEEDOHAN Portfolio
 
-Public portfolio at https://bbuggu-ldh.github.io/.
+Public portfolio: https://bbuggu-ldh.github.io/
 
-Deployment contains the homepage, six published projects, and their required assets. Local drafts and design studies are excluded by the source project public-export step.
+Current monitor homepage and project records with their referenced media.
+The root opens the monitor gallery; local backups and unselected design drafts are excluded.
+
+Updated with the approved project copy and consistent article typography in November 2026.

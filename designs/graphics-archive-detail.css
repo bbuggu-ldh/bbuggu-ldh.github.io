@@ -1,0 +1,4 @@
+.personal-archive .masthead{grid-template-columns:auto minmax(0,1fr)}
+.personal-archive .brand strong{font-size:clamp(30px,3.2vw,44px);letter-spacing:-2px}
+.personal-archive .brand span{letter-spacing:3px}
+@media(max-width:600px){.personal-archive .masthead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}.personal-archive .brand strong{font-size:28px;letter-spacing:-1.5px}.personal-archive .brand span{letter-spacing:2px}.personal-archive .masthead nav{margin-left:auto;gap:16px}}

@@ -1,0 +1,20 @@
+/* Outpainted 2:1 studio image; the original bezel is kept as a separate crop.
+   The small monitor composition is retained. No stretched edge strips. */
+:root{color-scheme:dark;background:#686868}
+*{box-sizing:border-box}
+html,body{margin:0;min-width:320px;min-height:100%;overflow-x:clip}
+.room{position:relative;height:100svh;min-height:360px;overflow:hidden;background:#686868}
+.reference-scene{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(150vw,200svh);aspect-ratio:2/1;background:#888 url(remy-monitor-outpaint-v1.png) center/100% 100% no-repeat}
+/* Original 1250 × 725 bezel crop. It covers the generated monitor completely,
+   while the single outpainted photograph supplies the continuous room. */
+.monitor-display{position:absolute;left:24.239%;top:14.88%;width:51.6347%;aspect-ratio:1250/725;background:url(remy-monitor-reference.png) 56.285714% 39.157895% / 128% 165.517241% no-repeat;border-radius:.8% / 1.38%;overflow:hidden}
+.screen{position:absolute;left:2.24%;top:3.724138%;width:95.52%;aspect-ratio:16/9;overflow:hidden;background:#101112;isolation:isolate}
+.screen iframe{border:0;position:absolute;top:0;left:0;width:1440px;height:810px;transform-origin:0 0;visibility:hidden;background:#101112}
+.screen iframe.is-ready{visibility:visible}
+@media(min-aspect-ratio:2/1){
+ .reference-scene{width:100vw;top:auto;bottom:0;transform:translateX(-50%)}
+}
+@media(max-aspect-ratio:4/3){
+ .room{background:linear-gradient(#686868 0%,#737373 50%,#333 100%)}
+ .reference-scene{top:auto;bottom:0;transform:translateX(-50%)}
+}
