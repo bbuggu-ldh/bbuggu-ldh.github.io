@@ -29,7 +29,13 @@ function select(index, updateUrl = true) {
   document.querySelector('#summary').textContent = item.dataset.summary;
   document.querySelector('#discipline').textContent = item.dataset.discipline;
   document.querySelector('#kind').textContent = item.dataset.kind;
-  document.querySelector('#open-project').href = item.getAttribute('href');
+  const open = document.querySelector('#open-project');
+  const available = item.dataset.detailPublic !== 'false';
+  if (!open.dataset.originalLabel) open.dataset.originalLabel = open.innerHTML;
+  open.innerHTML = available ? open.dataset.originalLabel : '비공개';
+  open.setAttribute('aria-disabled', String(!available));
+  if (available) open.href = item.getAttribute('href');
+  else open.removeAttribute('href');
   document.querySelectorAll('[data-select]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.select) === selected)));
   if (updateUrl) history.replaceState(null, '', `#${item.dataset.slug}`);
 }
@@ -37,6 +43,7 @@ function select(index, updateUrl = true) {
 cases.forEach((item, i) => item.addEventListener('click', event => {
   if (suppressClick) { event.preventDefault(); return; }
   if (i !== selected) { event.preventDefault(); select(i); }
+  if (item.dataset.detailPublic === 'false') event.preventDefault();
 }));
 document.querySelector('#previous').addEventListener('click', () => select(selected - 1));
 document.querySelector('#next').addEventListener('click', () => select(selected + 1));
