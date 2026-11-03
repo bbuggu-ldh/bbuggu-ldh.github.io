@@ -5,3 +5,5 @@ body.personal-archive *{font-family:"Archive Sans",sans-serif!important}
 .personal-archive .case .cover-title span,
 .personal-archive .case .case-spine>span{font-family:"Archive Serif",Georgia,serif!important}
 .personal-archive .case[data-slug="show-business"] .cover-title{font-size:22cqw}
+
+.personal-archive .case:is([data-slug="daejeon"],[data-slug="mungyeong"]) .cover-title{font-size:13cqw;letter-spacing:-.045em}
