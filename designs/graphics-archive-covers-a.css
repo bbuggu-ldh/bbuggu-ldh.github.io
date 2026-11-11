@@ -8,4 +8,4 @@ body.personal-archive *{font-family:"Archive Sans",sans-serif!important}
 
 .personal-archive .case:is([data-slug="daejeon"],[data-slug="mungyeong"]) .cover-title{font-size:13cqw;letter-spacing:-.045em}
 
-.personal-archive .case[data-slug="niagara"] .cover-title{font-size:21cqw}
+.personal-archive .case[data-slug="niagara"] .cover-title{font-size:19cqw}
