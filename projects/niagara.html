@@ -1,21 +1,20 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>나이아가라 이펙트 제작 — LEEDOHAN</title><meta name="description" content="Niagara로 모래와 연무 그리고 스파크를 만들며 입자의 움직임과 표현 방식을 익히고 있다."><meta property="og:title" content="나이아가라 이펙트 제작 — LEEDOHAN"><meta property="og:type" content="article"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../designs/footprints-archive.css"><link rel="stylesheet" href="../designs/footprints-surface.css?v=reading-width-20261102b"><link rel="stylesheet" href="../designs/project-surface.css?v=full-video-20261102c"><link rel="stylesheet" href="../designs/niagara.css?v=20261111"><script src="../app.js" defer></script></head>
-<body class="surface-detail project-detail niagara-detail" data-project="niagara">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>나이아가라 이펙트 제작 — LEEDOHAN</title><meta name="description" content="Niagara로 모래와 연무 그리고 스파크를 만들며 입자의 움직임과 표현 방식을 익히고 있다."><meta property="og:title" content="나이아가라 이펙트 제작 — LEEDOHAN"><meta property="og:type" content="article"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../designs/footprints-archive.css"><link rel="stylesheet" href="../designs/footprints-surface.css?v=reading-width-20261102b"><link rel="stylesheet" href="../designs/project-surface.css?v=full-video-20261102c"><script src="../app.js" defer></script></head>
+<body class="surface-detail project-detail" data-project="niagara" style="--project-backdrop:url('../media/niagara-sand-result-1600.webp')">
 <a class="skip-link" href="#record">본문으로 건너뛰기</a><div class="reading-progress" aria-hidden="true"></div>
-<header class="case-header" id="top"><a class="case-brand" href="../designs/graphics-archive-remy.html?project=niagara"><strong>LEEDOHAN</strong><span>Technical Artist</span></a><a class="back-link" href="../designs/graphics-archive-remy.html?project=niagara">← 프로젝트 목록</a></header>
-<main class="article-panel" id="main">
-<section class="fx-opening" aria-labelledby="surface-title">
-  <header class="fx-heading"><div><h1 id="surface-title">NIAGARA</h1><p class="fx-name">나이아가라 이펙트 제작</p></div><p class="fx-meta">개인 실습 · 진행 중<br><span>2026.11</span></p></header>
-  <figure class="fx-film"><video controls playsinline muted loop preload="metadata" poster="../media/niagara-sand-poster.jpg" aria-label="캐릭터 주변으로 흐르는 모래 효과"><source src="../media/niagara-sand.mp4" type="video/mp4"></video><figcaption><span>캐릭터 주변으로 흐르는 모래</span><a href="#record">제작 과정 <span aria-hidden="true">↓</span></a></figcaption></figure>
-</section>
-<div class="surface-reading"><article class="article-body" id="record">
+<header class="case-header" id="top"><a class="case-brand" href="../designs/graphics-archive-remy.html"><strong>LEEDOHAN</strong><span>Technical Artist</span></a><a class="back-link" href="../designs/graphics-archive-remy.html">← 프로젝트 목록</a></header>
+<main class="article-panel" id="main"><section class="surface-opening" aria-labelledby="surface-title">
+<img class="surface-landscape" src="../media/niagara-sand-result-1600.webp" alt="나이아가라 이펙트 제작 작업 배경" aria-hidden="true" fetchpriority="high">
+<div class="surface-feature"><div class="surface-result"><figure class="project-video"><video controls playsinline muted preload="metadata" poster="../media/niagara-sand-poster.jpg" aria-label="캐릭터 주변으로 흐르는 모래 효과"><source src="../media/niagara-sand.mp4" type="video/mp4"></video></figure></div><header class="surface-copy"><h1 id="surface-title">Niagara</h1><p class="surface-name">나이아가라 이펙트 제작</p><p class="surface-description">Niagara로 모래와 연무 그리고 스파크를 만들며 입자의 움직임과 표현 방식을 익히고 있다.</p><a class="surface-read" href="#record">제작 과정 읽기 <span aria-hidden="true">↓</span></a></header></div>
+<div class="surface-bottom"><p>개인 실습<br>2026.11 — 진행 중</p><a href="#record">아래로 스크롤 <span aria-hidden="true">↓</span></a></div>
+</section><div class="surface-reading"><article class="article-body" id="record">
 
-<section class="fx-section" id="sand">
+<section id="sand">
 <h2>1. 캐릭터 주변으로 흐르는 모래</h2>
 <p>캐릭터의 형태를 따라 모래가 흘러나오게 만들고 싶어 스켈레탈 메시 표면에 입자를 배치하고 Niagara Fluids의 소스로 연결했다.</p>
 <div class="project-image-pairs">
-<figure class="article-figure"><a href="../media/niagara-mesh-particles.png" data-zoom><img src="../media/niagara-mesh-particles-1600.webp" alt="캐릭터 표면에 배치한 입자" loading="lazy"></a><figcaption>메시 표면에 입자 배치</figcaption></figure>
-<figure class="article-figure"><a href="../media/niagara-fluid-source.png" data-zoom><img src="../media/niagara-fluid-source-1600.webp" alt="메시 표면 입자를 가스 소스로 연결한 결과" loading="lazy"></a><figcaption>입자를 Niagara Fluids 소스로 연결</figcaption></figure>
+<figure class="article-figure"><a href="../media/niagara-mesh-particles.png" class="zoom-link" data-zoom><img src="../media/niagara-mesh-particles-1600.webp" alt="캐릭터 표면에 배치한 입자" loading="lazy"></a><figcaption>메시 표면에 입자 배치</figcaption></figure>
+<figure class="article-figure"><a href="../media/niagara-fluid-source.png" class="zoom-link" data-zoom><img src="../media/niagara-fluid-source-1600.webp" alt="메시 표면 입자를 가스 소스로 연결한 결과" loading="lazy"></a><figcaption>입자를 Niagara Fluids 소스로 연결</figcaption></figure>
 </div>
 <p>표면에 입자가 생기는 것까지 확인한 뒤에는 이 입자에서 가스가 나오도록 소스 속성을 추가하고 Grid3D Gas가 해당 이미터를 읽게 연결했다.</p>
 <p>메시 표면의 초기 위치는 Initialize Mesh Reproduction Sprite로 정하고 기존 입자는 Update Mesh Reproduction Sprite로 갱신하도록 구성했고 소스 이미터에는 GPU 시뮬레이션과 Fixed Bounds를 사용했다.</p>
@@ -23,7 +22,7 @@
 <p>가스가 나타난 뒤에는 연기가 너무 직선적으로 퍼져 보여 바람과 난류를 추가했고 밀도 부력, 해상도, 압력 계산 반복 횟수도 조절하며 아래쪽과 옆으로 흐르는 모래 형태를 맞췄다.</p>
 </section>
 
-<section class="fx-section" id="smoke">
+<section id="smoke">
 <h2>2. 바닥으로 퍼지는 연무</h2>
 <figure class="project-video"><video controls playsinline muted preload="metadata" poster="../media/niagara-smoke-poster.jpg" aria-label="바닥 주변으로 퍼지는 연무 실습 결과"><source src="../media/niagara-smoke.mp4" type="video/mp4"></video><figcaption>바닥 주변으로 퍼지는 연무</figcaption></figure>
 <p>모래 효과를 만든 뒤에는 같은 구성을 이용해 드라이아이스처럼 바닥에 퍼지는 연무를 만들고 싶어 소스를 정적 메시로 바꾸고 입자에 중력을 추가했다.</p>
@@ -31,24 +30,24 @@
 <p>연무가 오래 남는 정도는 Density Dissipation을 1.5로 조절하며 맞췄고 소스 입자의 움직임과 가스의 흐름을 따로 바꿔가며 결과를 확인했다.</p>
 </section>
 
-<section class="fx-section" id="sparks">
+<section id="sparks">
 <h2>3. 스파크와 주변을 비추는 빛</h2>
-<figure class="article-figure"><a href="../media/niagara-sparks-result.png" data-zoom><img src="../media/niagara-sparks-result-1600.webp" alt="금색 스파크와 주변 바닥의 빛" loading="lazy"></a><figcaption>스파크와 조명 표현</figcaption></figure>
+<figure class="article-figure"><a href="../media/niagara-sparks-result.png" class="zoom-link" data-zoom><img src="../media/niagara-sparks-result-1600.webp" alt="금색 스파크와 주변 바닥의 빛" loading="lazy"></a><figcaption>스파크와 조명 표현</figcaption></figure>
 <p>위로 솟아올랐다가 떨어지는 스파크를 만들기 위해 Cylinder 범위에 입자를 생성하고 초기 속도를 준 뒤 중력과 바닥 충돌을 연결했다.</p>
 <p>입자가 빠르게 커졌다가 점차 작아지며 사라지도록 크기 곡선을 조절하고 Scale Color로 색상 배율을 바꿨고 주변 표면에도 빛이 닿도록 Light Renderer를 추가했다.</p>
 <div class="project-image-pairs">
-<figure class="article-figure"><a href="../media/niagara-sparks-cylinder.png" data-zoom><img src="../media/niagara-sparks-cylinder-1600.webp" alt="스파크 생성 위치를 정하는 Cylinder 설정" loading="lazy"></a><figcaption>Cylinder 생성 범위</figcaption></figure>
-<figure class="article-figure"><a href="../media/niagara-sparks-stack.png" data-zoom><img src="../media/niagara-sparks-stack-1600.webp" alt="스파크의 생성과 갱신 및 Light Renderer 스택" loading="lazy"></a><figcaption>입자 스택과 Light Renderer</figcaption></figure>
+<figure class="article-figure"><a href="../media/niagara-sparks-cylinder.png" class="zoom-link" data-zoom><img src="../media/niagara-sparks-cylinder-1600.webp" alt="스파크 생성 위치를 정하는 Cylinder 설정" loading="lazy"></a><figcaption>Cylinder 생성 범위</figcaption></figure>
+<figure class="article-figure"><a href="../media/niagara-sparks-stack.png" class="zoom-link" data-zoom><img src="../media/niagara-sparks-stack-1600.webp" alt="스파크의 생성과 갱신 및 Light Renderer 스택" loading="lazy"></a><figcaption>입자 스택과 Light Renderer</figcaption></figure>
 </div>
 <p>만들면서 Shape Location은 입자가 생기는 위치를 정하고 Add Velocity는 처음 움직이는 방향과 속도를 정한다는 점을 구분했고 크기, 충돌, 조명도 각각 조절하며 결과를 확인했다.</p>
 </section>
 
-<details class="fx-basics">
-<summary>첫 입자 실습</summary>
+<section id="first-particles">
+<h2>4. 첫 입자 실습</h2>
 <p>모래와 연무를 만들기 전에는 위로 퍼졌다가 바닥에 부딪히며 사라지는 입자부터 만들어봤고 Add Velocity의 In Cone 방향을 위쪽으로 설정한 뒤 Gravity Force와 Collision을 연결했다.</p>
 <p>중력을 추가하니 입자가 바로 떨어져 보여 초기 속도를 조절해 먼저 상승한 뒤 내려오도록 맞췄고 Scale Sprite Size의 곡선으로 처음에는 커졌다가 수명이 끝날수록 작아지게 했다.</p>
 <figure class="project-video"><video controls playsinline muted preload="metadata" poster="../media/niagara-first-poster.jpg" aria-label="첫 입자 효과 실습"><source src="../media/niagara-first.mp4" type="video/mp4"></video><figcaption>초기 속도와 중력에 따른 입자 움직임</figcaption></figure>
 <p>이 과정에서 Spawn은 생성 시점의 초기값을 정하고 Update는 살아 있는 입자를 계속 갱신한다는 흐름을 이해하고 생성량, 수명, 속도를 나눠서 조절하기 시작했다.</p>
-</details>
-</article><nav class="record-end" aria-label="프로젝트 탐색"><a href="../designs/graphics-archive-remy.html?project=niagara">← 프로젝트 목록</a><a href="#top">맨 위로 ↑</a></nav></div>
-</main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>
+</section>
+</article>
+<nav class="record-end" aria-label="프로젝트 탐색"><a href="../designs/graphics-archive-remy.html">← 프로젝트 목록</a><a href="#top">맨 위로 ↑</a></nav></div></main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>
