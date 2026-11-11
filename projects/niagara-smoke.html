@@ -10,5 +10,12 @@
 </section><div class="surface-reading"><article class="article-body" id="record">
 
 <section><h2>1. 연무의 소스 구성</h2><p>모래 효과를 만든 뒤에는 같은 구성을 이용해 드라이아이스처럼 바닥에 퍼지는 연무를 만들고 싶어 소스를 정적 메시로 바꾸고 입자에 중력을 추가했다.</p><p>소스 입자는 직접 보이지 않도록 Sprite Renderer를 끄고 기존 Grid3D Gas를 유지한 상태에서 Wind를 아래쪽으로 설정했고 바닥 주변에서 연무가 퍼지도록 Mesh Collision도 사용했다.</p></section><section><h2>2. 연무 흐름 조절</h2><p>연무가 오래 남는 정도는 Density Dissipation을 1.5로 조절하며 맞췄고 소스 입자의 움직임과 가스의 흐름을 따로 바꿔가며 결과를 확인했다.</p></section>
+
+<section id="sparks">
+<h2>3. 스파크 추가</h2>
+<figure class="article-figure"><a href="../media/niagara-sparks-result.png" class="zoom-link" data-zoom><img src="../media/niagara-sparks-result-1600.webp" alt="푸른 연무와 함께 배치한 금색 스파크와 바닥에 비치는 빛" loading="lazy"></a></figure>
+<p>연무와 함께 스파크를 표현하기 위해 Cylinder 범위에 입자를 생성하고 초기 속도를 준 뒤 중력과 바닥 충돌을 연결했다.</p>
+<p>입자가 빠르게 커졌다가 점차 작아지며 사라지도록 크기 곡선을 조절했고 Scale Color로 색상 배율을 바꾼 뒤 주변 표면에도 빛이 닿도록 Light Renderer를 추가했다.</p>
+</section>
 </article>
 <nav class="record-end" aria-label="프로젝트 탐색"><a href="niagara.html#works">← 나이아가라 모음집</a><a href="#top">맨 위로 ↑</a><a href="niagara-sand.html">모래 효과 보기 →</a></nav></div></main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>
