@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>전기 효과 — LEEDOHAN</title><meta name="description" content="세 기둥 사이를 연결하고 가운데가 불규칙하게 흔들리는 전기 효과"><meta property="og:title" content="전기 효과 — LEEDOHAN"><meta property="og:type" content="article"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" href="../designs/footprints-archive.css"><link rel="stylesheet" href="../designs/footprints-surface.css?v=reading-width-20261102b"><link rel="stylesheet" href="../designs/project-surface.css?v=full-video-20261102c"><script src="../app.js" defer></script></head>
+<body class="surface-detail project-detail" data-project="niagara-electricity" style="--project-backdrop:url('../media/niagara-electricity-result-1600.webp')">
+<a class="skip-link" href="#record">본문으로 건너뛰기</a><div class="reading-progress" aria-hidden="true"></div>
+<header class="case-header" id="top"><a class="case-brand" href="niagara.html#works"><strong>LEEDOHAN</strong><span>Technical Artist</span></a><a class="back-link" href="niagara.html#works">← 나이아가라 모음집</a></header>
+<main class="article-panel" id="main"><section class="surface-opening" aria-labelledby="surface-title">
+<img class="surface-landscape" src="../media/niagara-electricity-result-1600.webp" alt="전기 효과 작업 배경" aria-hidden="true" fetchpriority="high">
+<div class="surface-feature"><div class="surface-result"><figure class="project-video"><video controls playsinline muted loop preload="metadata" poster="../media/niagara-electricity-poster.jpg" aria-label="세 기둥 사이를 연결한 전기 효과"><source src="../media/niagara-electricity.mp4" type="video/mp4"></video></figure></div><header class="surface-copy"><h1 id="surface-title">Niagara</h1><p class="surface-name">전기 효과</p><p class="surface-description">세 기둥 사이를 연결하고 가운데가 불규칙하게 흔들리는 전기 효과</p><a class="surface-read" href="#record">제작 과정 읽기 <span aria-hidden="true">↓</span></a></header></div>
+<div class="surface-bottom"><p>개인 프로젝트<br>2026.11 — 진행 중</p><a href="#record">아래로 스크롤 <span aria-hidden="true">↓</span></a></div>
+</section><div class="surface-reading"><article class="article-body" id="record">
+
+<section>
+<h2>1. 세 기둥을 잇는 빔</h2>
+<p>연무와 스파크를 배치한 장면에 세 기둥을 잇는 전기 효과를 추가하고 싶어 CPU 이미터 세 개를 사용해 삼각형으로 연결했다.</p>
+<p>Beam Emitter Setup에서 시작점과 끝점을 지정하고 Spawn Burst Instantaneous로 입자 50개를 한 번에 생성한 뒤 Spawn Beam으로 두 점 사이에 배치하고 Ribbon Renderer로 이어줬다.</p>
+<p>시작점과 끝점에는 높이가 조금 다른 위치 두 개를 배열로 넣고 Select Position from Array에서 무작위로 선택하게 해 새로 생기는 빔의 연결 위치에도 차이를 줬다.</p>
+<div class="project-image-pairs">
+<figure class="article-figure"><a href="../media/niagara-electricity-stack.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-stack-1600.webp" alt="전기 효과를 구성한 세 CPU 이미터와 Beam 모듈 스택" loading="lazy"></a></figure>
+<figure class="article-figure"><a href="../media/niagara-electricity-endpoints.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-endpoints-1600.webp" alt="시작점과 끝점을 두 위치 중 무작위로 선택하는 Beam Emitter Setup" loading="lazy"></a></figure>
+</div>
+</section>
+
+<section>
+<h2>2. 반복 주기와 수명 조절</h2>
+<p>빔이 빠르게 사라졌다가 다시 나타나도록 Life Cycle Mode를 Self로 설정하고 0.1초마다 Burst가 반복되게 만들었는데 이전 입자가 오래 남으면서 전기줄이 너무 두껍게 보였다.</p>
+<p>Initialize Particle의 Lifetime을 0.5초로 줄여 입자가 남는 시간을 조절했고 반복해서 생성되는 빔이 겹치면서도 빠르게 모양이 바뀌도록 맞췄다.</p>
+</section>
+
+<section>
+<h2>3. 두께와 흔들림 조절</h2>
+<p>일자로 이어진 빔에 변화를 주기 위해 Beam Width에 커브를 연결하고 RibbonLinkOrder를 기준으로 가운데가 조금 더 굵고 양 끝은 얇아지도록 조절했다.</p>
+<p>Jitter Position에도 연결 순서를 기준으로 커브를 넣어 양 끝의 흔들림은 줄이고 가운데가 강하게 흔들리도록 만들었고 Random Vector를 사용해 불규칙한 움직임을 더했다.</p>
+<div class="project-image-pairs">
+<figure class="article-figure"><a href="../media/niagara-electricity-width.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-width-1600.webp" alt="빔 가운데의 두께를 늘리는 Beam Width 커브" loading="lazy"></a></figure>
+<figure class="article-figure"><a href="../media/niagara-electricity-jitter.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-jitter-1600.webp" alt="양 끝보다 가운데를 강하게 흔드는 Jitter Position 커브" loading="lazy"></a></figure>
+</div>
+</section>
+
+<section>
+<h2>4. 양쪽으로 약해지는 머티리얼</h2>
+<p>기본 리본 머티리얼은 한쪽으로만 흐려지는 형태여서 TexCoord의 U 값과 OneMinus로 반전한 값을 곱해 양쪽 가장자리가 흐려지도록 수정했다.</p>
+<p>Particle Color의 RGB는 Emissive에 연결하고 Alpha는 두 마스크에 각각 곱한 뒤 Opacity로 연결해 중앙이 남고 UV 양 끝으로 갈수록 사라지는 형태를 만들었다.</p>
+<div class="project-image-pairs">
+<figure class="article-figure"><a href="../media/niagara-electricity-material-before.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-material-before-1600.webp" alt="수정 전 한쪽으로만 흐려지는 기본 리본 머티리얼" loading="lazy"></a></figure>
+<figure class="article-figure"><a href="../media/niagara-electricity-material-after.png" class="zoom-link" data-zoom><img src="../media/niagara-electricity-material-after-1600.webp" alt="수정 후 U 값과 반전한 값을 곱해 양쪽 가장자리를 흐리게 만든 머티리얼" loading="lazy"></a></figure>
+</div>
+</section>
+</article>
+<nav class="record-end" aria-label="프로젝트 탐색"><a href="niagara.html#works">← 나이아가라 모음집</a><a href="#top">맨 위로 ↑</a><a href="niagara-sand.html">모래 효과 보기 →</a></nav></div></main><dialog class="lightbox" aria-label="이미지 크게 보기"><div class="lightbox-toolbar"><p id="lightbox-title">이미지 크게 보기</p><button class="lightbox-size" type="button" aria-pressed="false">원본 크기</button><button class="lightbox-close" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="lightbox-scroll"><img alt=""></div><p class="lightbox-help">원본 크기로 확대하면 스크롤로 이동할 수 있습니다. ESC로 닫기</p></dialog></body></html>
