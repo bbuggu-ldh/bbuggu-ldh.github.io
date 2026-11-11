@@ -1,0 +1,11 @@
+/* Only the two-entry index is new; detail pages use the shared template unchanged. */
+.niagara-collection .collection-works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin:28px 0 36px}
+.niagara-collection .article-body .collection-work{display:block;min-width:0;text-decoration:none;color:inherit}
+.niagara-collection .collection-work>img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#101112}
+.niagara-collection .collection-work-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-top:19px}
+.niagara-collection .surface-reading .collection-work h3{font-size:24px;line-height:1.5;margin:0;color:var(--heading)}
+.niagara-collection .collection-work-title>span{font-size:19px;color:#b4b6b2}
+.niagara-collection .collection-work p{font-size:14px;line-height:1.8;margin:10px 0 19px;color:#bfc0be}
+.niagara-collection .collection-open{font-size:12px;display:inline-block;border-bottom:1px solid #ffffff45;padding-bottom:3px;color:#d8d6ce}
+.niagara-collection .collection-work:hover .collection-open{border-color:#e8e6df;color:#fff}
+@media(max-width:650px){.niagara-collection .collection-works{grid-template-columns:1fr;gap:44px}.niagara-collection .surface-reading .collection-work h3{font-size:21px}.niagara-collection .collection-work p{font-size:13px;margin-bottom:14px}}
