@@ -1,0 +1,11 @@
+/* Editorial hierarchy within the existing VHS project layout. */
+.surface-reading .article-body > .project-overview{max-width:800px;margin:0 auto 48px;padding:0 0 28px;border-bottom:1px solid #ffffff24}
+.surface-reading .article-body > .project-overview h2{margin:0 0 20px;padding:0;border:0;font-size:22px;line-height:1.5}
+.project-overview dl{margin:0;display:grid;gap:13px}
+.project-overview dl > div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px}
+.project-overview dt{font-size:13px;color:#aaa9a4;line-height:1.9}
+.project-overview dd{margin:0;font-size:15px;line-height:1.8;color:#deddd7}
+.surface-reading .article-body .project-overview .overview-note{margin:20px 0 0;font-size:13px;line-height:1.8;color:#b3b2ad}
+.surface-reading .article-body > .overview-detail-heading{margin-top:0}
+.surface-opening .hero-film .footprint-video-status{display:block;max-width:640px;margin:10px 0 0;font-size:12px;line-height:1.7;color:#c0bfba;text-align:left}
+@media(max-width:650px){.project-overview dl > div{gap:10px;grid-template-columns:34px minmax(0,1fr)}.project-overview dd{font-size:14px}}
